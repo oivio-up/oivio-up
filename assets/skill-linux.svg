@@ -36,12 +36,12 @@
         font-size="16" fill="white" fill-opacity="0.92" font-weight="700">Linux</text>
   <text x="526" y="38" text-anchor="end"
         font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
-        font-size="14" fill="white" fill-opacity="0.7" font-weight="600">75%</text>
+        font-size="14" fill="white" fill-opacity="0.7" font-weight="600">6%</text>
 
   <rect x="34" y="50" width="492" height="12" rx="6" fill="white" fill-opacity="0.10"/>
-  <!-- 75% -> 492*0.75 = 369.0 -->
+
   <g filter="url(#barGlow)">
-    <rect x="34" y="50" width="369.0" height="12" rx="6" fill="url(#barGrad)"/>
+    <rect x="34" y="50" width="29.52" height="12" rx="6" fill="url(#barGrad)"/>
     <rect x="34" y="50" width="70" height="12" rx="6" fill="white" fill-opacity="0.18">
       <animate attributeName="x" values="34;456;34" dur="3.8s" repeatCount="indefinite"/>
       <animate attributeName="fill-opacity" values="0.10;0.22;0.10" dur="3.8s" repeatCount="indefinite"/>
