@@ -36,12 +36,12 @@
         font-size="16" fill="white" fill-opacity="0.92" font-weight="700">C++</text>
   <text x="526" y="38" text-anchor="end"
         font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
-        font-size="14" fill="white" fill-opacity="0.7" font-weight="600">70%</text>
+        font-size="14" fill="white" fill-opacity="0.7" font-weight="600">5%</text>
 
   <rect x="34" y="50" width="492" height="12" rx="6" fill="white" fill-opacity="0.10"/>
-  <!-- 70% -> 492*0.70 = 344.4 -->
+
   <g filter="url(#barGlow)">
-    <rect x="34" y="50" width="344.4" height="12" rx="6" fill="url(#barGrad)"/>
+    <rect x="34" y="50" width="24.6" height="12" rx="6" fill="url(#barGrad)"/>
     <rect x="34" y="50" width="70" height="12" rx="6" fill="white" fill-opacity="0.18">
       <animate attributeName="x" values="34;456;34" dur="3.8s" repeatCount="indefinite"/>
       <animate attributeName="fill-opacity" values="0.10;0.22;0.10" dur="3.8s" repeatCount="indefinite"/>
