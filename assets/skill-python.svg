@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="86" viewBox="0 0 560 86">
+  <defs>
+    <!-- 背景柔光 -->
+    <radialGradient id="bgGlow" cx="20%" cy="10%" r="90%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.25"/>
+      <stop offset="45%" stop-color="#06b6d4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 进度条渐变 -->
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="45%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <!-- 玻璃模糊（GitHub 对 filter 支持不完全，但大多数情况下能显示；不支持时也会降级成“半透明卡片”） -->
+    <filter id="glassBlur" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.6 0" result="glass"/>
+      <feMerge>
+        <feMergeNode in="glass"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 进度条发光 -->
+    <filter id="barGlow" x="-30%" y="-200%" width="160%" height="500%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="560" height="86" rx="18" fill="#0b0f19"/>
+  <rect x="0" y="0" width="560" height="86" rx="18" fill="url(#bgGlow)"/>
+
+  <!-- 玻璃卡片层 -->
+  <g filter="url(#glassBlur)">
+    <rect x="14" y="12" width="532" height="62" rx="16"
+          fill="white" fill-opacity="0.07"
+          stroke="white" stroke-opacity="0.16"/>
+  </g>
+
+  <!-- 标题 -->
+  <text x="34" y="38" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+        font-size="16" fill="white" fill-opacity="0.92" font-weight="700">
+    Python
+  </text>
+
+  <!-- 百分比 -->
+  <text x="526" y="38" text-anchor="end"
+        font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+        font-size="14" fill="white" fill-opacity="0.7" font-weight="600">
+    85%
+  </text>
+
+  <!-- 进度条底 -->
+  <rect x="34" y="50" width="492" height="12" rx="6"
+        fill="white" fill-opacity="0.10"/>
+
+  <!-- 进度条本体：把 width 改成 (492 * 百分比) -->
+  <!-- 85% -> 492*0.85 = 418.2 -->
+  <g filter="url(#barGlow)">
+    <rect x="34" y="50" width="418.2" height="12" rx="6" fill="url(#barGrad)"/>
+    <!-- 亮点扫光 -->
+    <rect x="34" y="50" width="70" height="12" rx="6" fill="white" fill-opacity="0.18">
+      <animate attributeName="x" values="34;456;34" dur="3.8s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="0.10;0.22;0.10" dur="3.8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
